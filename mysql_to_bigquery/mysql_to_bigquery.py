@@ -83,9 +83,9 @@ print("Data written to BigQuery successfully!")
 # zomato_restaurants = zomato_restaurants.withColumn(
 #     "State",
 #     when(zomato_restaurants["City"].isin("Bangalore", "Mysore", "Mangalore", "Udupi"), "Karnataka")
-#     .when(zomato_restaurants["City"].isin("Chennai", "Coimbatore", "Madurai", "Trichy", "Salem", "Vellore", "Tirupati"), "Tamil Nadu")
+#     .when(zomato_restaurants["City"].isin("Chennai", "Coimbatore", "Madurai", "Trichy", "Salem", "Vellore"), "Tamil Nadu")
 #     .when(zomato_restaurants["City"].isin("Hyderabad", "Secunderabad"), "Telangana")
-#     .when(zomato_restaurants["City"].isin("Guntur", "Vijayawada"), "Andhra Pradesh")
+#     .when(zomato_restaurants["City"].isin("Guntur", "Vijayawada", "Tirupati"), "Andhra Pradesh")
 #     .when(zomato_restaurants["City"].isin("Mumbai", "Pune", "Nagpur", "Nashik", "Kolhapur", "Aurangabad"), "Maharashtra")
 #     .when(zomato_restaurants["City"].isin("New Delhi", "Delhi"), "Delhi")
 #     .when(zomato_restaurants["City"].isin("Gurgaon", "Faridabad"), "Haryana")
