@@ -1,0 +1,3 @@
+[debug] not up to date. inChanged = true, force = false
+[debug] Updating ProjectRef(uri("file:/Users/syedmanzoor/Documents/projects/ETL/hdfs_to_hive/project/"), "hdfs_to_hive-build")...
+[debug] Done updating ProjectRef(uri("file:/Users/syedmanzoor/Documents/projects/ETL/hdfs_to_hive/project/"), "hdfs_to_hive-build")
