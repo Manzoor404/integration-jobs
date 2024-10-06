@@ -9,6 +9,15 @@ pipeline {
             }
         }
 
+        stage('Check PATH') {
+            steps {
+                script {
+                    // Print the PATH in Jenkins environment
+                    sh "echo \$PATH"
+                }
+            }
+        }
+
         stage('Upload to GCS') {
             steps {
                 script {
