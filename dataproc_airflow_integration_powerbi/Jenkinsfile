@@ -21,8 +21,9 @@ pipeline {
         stage('Upload to GCS') {
             steps {
                 script {
-                    // Upload the ETL script to the GCS bucket
+                    // Add gsutil path before running the command
                     sh """
+                    export PATH=/Users/syedmanzoor/google-cloud-sdk/bin:\$PATH
                     gsutil cp dataproc_airflow_integration_powerbi/dataproc_airflow_etl_script.py gs://syedmanzoor-bucket/dataproc_scripts/dataproc_airflow_etl_script.py
                     """
                 }
