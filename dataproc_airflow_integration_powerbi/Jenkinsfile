@@ -9,21 +9,12 @@ pipeline {
             }
         }
 
-        stage('Trigger Airflow DAG') {
+        stage('Upload to GCS') {
             steps {
                 script {
-                    // Trigger Airflow DAG that runs the ETL pipeline in DataProc
+                    // Upload the ETL script to the GCS bucket
                     sh """
-                    curl -X POST \
-                        http://your-airflow-server:8080/api/v1/dags/your_dag_id/dagRuns \
-                        -H 'Content-Type: application/json' \
-                        -H 'Authorization: Basic your_encoded_auth_token' \
-                        -d '{
-                              "conf": {
-                                "gcs_path": "gs://your-gcs-bucket/path/to/csv",
-                                "dataProcCluster": "your-dataproc-cluster"
-                              }
-                            }'
+                    gsutil cp dataproc_airflow_integration_powerbi/dataproc_airflow_etl_script.py gs://syedmanzoor-bucket/dataproc_scripts/dataproc_airflow_etl_script.py
                     """
                 }
             }
