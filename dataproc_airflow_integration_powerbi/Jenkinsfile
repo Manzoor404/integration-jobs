@@ -9,11 +9,29 @@ pipeline {
             }
         }
 
+<<<<<<< HEAD
         stage('Upload to GCS') {
             steps {
                 script {
                     // Upload the ETL script to the GCS bucket
                     sh """
+=======
+        stage('Check PATH') {
+            steps {
+                script {
+                    // Print the PATH in Jenkins environment
+                    sh "echo \$PATH"
+                }
+            }
+        }
+
+        stage('Upload to GCS') {
+            steps {
+                script {
+                    // Add gsutil path before running the command
+                    sh """
+                    export PATH=/Users/syedmanzoor/google-cloud-sdk/bin:\$PATH
+>>>>>>> ed2b8c9ef60eea406f7868a94c19582ef04b67a2
                     gsutil cp dataproc_airflow_integration_powerbi/dataproc_airflow_etl_script.py gs://syedmanzoor-bucket/dataproc_scripts/dataproc_airflow_etl_script.py
                     """
                 }
@@ -29,4 +47,6 @@ pipeline {
             echo 'Pipeline failed'
         }
     }
+
 }
+
