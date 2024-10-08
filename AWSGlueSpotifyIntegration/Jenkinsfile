@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    environment {
+        GITHUB_REPO = 'https://github.com/Manzoor404/integration-jobs.git'
+        GITHUB_BRANCH = 'integration-jobs'
+        SCRIPT_PATH = 'AWSGlueSpotifyIntegration/glue_spotify_integration.py'
+        GLUE_JOB_NAME = 'SpotifyETLJob'
+        AWS_REGION = 'eu-north-1'
+        // Add your AWS credentials profile configured in Jenkins
+        AWS_CREDENTIALS_ID = 'aws-credentials' // Credentials ID from Jenkins
+    }
+
+    stages {
+        stage('Checkout from GitHub') {
+            steps {
+                // Pull the latest code from GitHub
+                git branch: "${GITHUB_BRANCH}", url: "${GITHUB_REPO}"
+            }
+        }
+
+        stage('Run AWS Glue Job') {
+            steps {
+                withAWS(region: "${AWS_REGION}", credentials: "${AWS_CREDENTIALS_ID}") {
+                    // Trigger the AWS Glue job
+                    glueStartJobRun(jobName: "${GLUE_JOB_NAME}")
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded: AWS Glue Job triggered successfully!'
+        }
+        failure {
+            echo 'Pipeline failed: Failed to trigger AWS Glue Job.'
+        }
+    }
+}
