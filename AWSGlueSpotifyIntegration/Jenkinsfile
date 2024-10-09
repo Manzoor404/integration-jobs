@@ -2,28 +2,25 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_REPO = 'https://github.com/Manzoor404/integration-jobs.git'
-        GITHUB_BRANCH = 'integration-jobs'
-        SCRIPT_PATH = 'AWSGlueSpotifyIntegration/glue_spotify_integration.py'
-        GLUE_JOB_NAME = 'SpotifyETLJob'
-        AWS_REGION = 'eu-north-1'
-        // Add your AWS credentials profile configured in Jenkins
-        AWS_CREDENTIALS_ID = 'aws-credentials' // Credentials ID from Jenkins
+        AWS_CREDENTIALS = credentials('aws-secret-key')  // Use the correct ID of your AWS credentials stored in Jenkins
     }
 
     stages {
         stage('Checkout from GitHub') {
             steps {
-                // Pull the latest code from GitHub
-                git branch: "${GITHUB_BRANCH}", url: "${GITHUB_REPO}"
+                git branch: 'integration-jobs', url: 'https://github.com/Manzoor404/integration-jobs.git'
             }
         }
 
-        stage('Run AWS Glue Job') {
+        stage('Upload to S3') {
             steps {
-                withAWS(region: "${AWS_REGION}", credentials: "${AWS_CREDENTIALS_ID}") {
-                    // Trigger the AWS Glue job
-                    glueStartJobRun(jobName: "${GLUE_JOB_NAME}")
+                withAWS(credentials: 'aws-secret-key', region: 'us-east-1') {
+                    script {
+                        // Upload the Glue ETL script to S3
+                        sh """
+                        aws s3 cp AWSGlueSpotifyIntegration/glue_spotify_integration.py s3://syedmanzoor/staging_data/Spotify/GlueSpotify/glue_spotify_integration.py
+                        """
+                    }
                 }
             }
         }
@@ -31,10 +28,10 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline succeeded: AWS Glue Job triggered successfully!'
+            echo 'Pipeline succeeded and the Glue script was uploaded to S3.'
         }
         failure {
-            echo 'Pipeline failed: Failed to trigger AWS Glue Job.'
+            echo 'Pipeline failed.'
         }
     }
 }
