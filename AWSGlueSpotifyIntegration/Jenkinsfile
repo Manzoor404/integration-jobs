@@ -32,7 +32,7 @@ pipeline {
             echo 'Pipeline succeeded and the Glue script was uploaded to S3.'
         }
         failure {
-            echo 'Pipeline failed.'
+            echo 'Pipeline failed..'
         }
     }
 }
