@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_CREDENTIALS = credentials('aws-secret-key')  // Use the correct ID of your AWS credentials stored in Jenkins
-        PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/aws-cli/bin"  // Add the path to AWS CLI
+        PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin"  // Include the correct path for AWS CLI
     }
 
     stages {
@@ -24,7 +24,7 @@ pipeline {
                     }
                 }
             }
-        }	
+        }
     }
 
     post {
