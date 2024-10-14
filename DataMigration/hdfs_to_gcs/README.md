@@ -3,6 +3,7 @@
 This project demonstrates migrating data from Hadoop HDFS to Google Cloud Storage (GCS) using PySpark. The data is read from HDFS, processed, and stored in GCS. A comparison is done to verify that the data migration is successful and that the data integrity is maintained.
 
 ## Architecture Diagram
+![image](https://github.com/user-attachments/assets/6d142625-eedc-4359-ae81-7a7d5773f53a)
 
 
 ## Requirements
