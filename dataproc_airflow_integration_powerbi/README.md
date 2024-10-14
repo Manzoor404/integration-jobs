@@ -6,7 +6,8 @@ This project demonstrates a daily ETL pipeline that processes COVID-19 data from
 
 The pipeline follows this architecture:
 
-![ETL Architecture](./6043F75D-8F24-4A1B-B863-8E6CBC238B7B.png)
+![image](https://github.com/user-attachments/assets/8b02eeca-5e0d-4e92-8b9b-cde2a18e1679)
+
 
 1. **Code Repository (GitHub)**: The PySpark ETL script is stored in GitHub.
 2. **Jenkins**: Used to upload the ETL script to GCS.
