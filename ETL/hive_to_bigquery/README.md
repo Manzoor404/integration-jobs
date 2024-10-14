@@ -2,6 +2,12 @@
 
 This project demonstrates an ETL process where data is extracted from a Hive table, transformed, and then loaded into Google Cloud Storage (GCS) and Google BigQuery. The transformations include cleaning, aggregating, and calculating growth rates for COVID-19 data.
 
+## Architecture
+
+The pipeline follows this architecture:
+![image](https://github.com/user-attachments/assets/26a6a3a0-45c2-41ec-8a84-a871be8b10d1)
+
+
 ## Steps Overview
 
 1. **Extract**:
