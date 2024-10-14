@@ -2,6 +2,12 @@
 
 This project demonstrates migrating data from a Hive table to Google BigQuery using PySpark. The data is read from Hive, temporarily stored in Google Cloud Storage (GCS), and finally written into a BigQuery table. The script also verifies the data migration by comparing record counts between Hive and BigQuery.
 
+## Architecture
+
+The pipeline follows this architecture:
+
+![image](https://github.com/user-attachments/assets/8da820da-a8c9-4a2b-8e8e-74cf49c130fa)
+
 ## Requirements
 
 - PySpark
