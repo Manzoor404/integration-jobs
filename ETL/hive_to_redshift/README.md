@@ -2,6 +2,13 @@
 
 This project demonstrates an ETL (Extract, Transform, Load) process using PySpark. The data is extracted from Hive, transformed, and then loaded into Amazon S3 and Amazon Redshift.
 
+
+## Architecture
+
+The pipeline follows this architecture:
+![image](https://github.com/user-attachments/assets/261b21c2-0fee-42bc-82d8-6d58b2eee804)
+
+
 ## Requirements
 
 - PySpark
