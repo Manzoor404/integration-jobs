@@ -6,7 +6,7 @@ This project demonstrates migrating data from a Hive table to Amazon Redshift us
 
 The pipeline follows this architecture:
 
-![image](https://github.com/user-attachments/assets/f196c009-9c7c-49e6-b9af-2defdc7ad902)
+![image](https://github.com/user-attachments/assets/07d0a3cc-e2c6-4fd8-a90b-a4ed09c59f48)
 
 
 ## Requirements
