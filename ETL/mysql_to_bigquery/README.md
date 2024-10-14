@@ -2,6 +2,12 @@
 
 This project demonstrates extracting restaurant data from a MySQL database, transforming it by mapping cities to their respective states, and storing the transformed data into Google Cloud Storage (GCS). The data is partitioned by state and city and stored in GCS using PySpark.
 
+## Architecture
+
+The pipeline follows this architecture:
+![image](https://github.com/user-attachments/assets/49ab5464-38fd-42ff-bb38-8116e426558d)
+
+
 ## Requirements
 
 - PySpark
