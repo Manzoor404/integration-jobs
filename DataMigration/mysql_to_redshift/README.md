@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a4191b75-7b9b-4d2f-9700-dade9196b8dc)# MySQL to Redshift Data Migration
+# MySQL to Redshift Data Migration
 
 This project demonstrates how to migrate data from MySQL to Amazon Redshift using PySpark. The script loads data from a MySQL table, saves it temporarily in an S3 bucket, and finally writes the data to an Amazon Redshift table.
 
