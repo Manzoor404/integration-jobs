@@ -1,0 +1,63 @@
+# Daily COVID-19 ETL Pipeline with Google Cloud
+
+This project demonstrates a daily ETL pipeline that processes COVID-19 data from Google Cloud Storage (GCS) and loads it into BigQuery using Dataproc for data transformation. The pipeline is orchestrated by Apache Airflow, and the data is visualized in GCP Looker Studio. The ETL job is triggered every day at 5:30 AM IST (12:00 AM UTC).
+
+## Architecture
+
+The pipeline follows this architecture:
+
+![ETL Architecture](./6043F75D-8F24-4A1B-B863-8E6CBC238B7B.png)
+
+1. **Code Repository (GitHub)**: The PySpark ETL script is stored in GitHub.
+2. **Jenkins**: Used to upload the ETL script to GCS.
+3. **Airflow**: Orchestrates the ETL job on a daily schedule.
+4. **Dataproc**: Executes the PySpark job to process the data from GCS.
+5. **BigQuery**: Data is stored in BigQuery for querying and analysis.
+6. **Looker Studio**: Visualizes the processed data through interactive dashboards.
+
+## Steps Involved
+
+1. **Data Extraction**:
+    - Reads COVID-19 data from GCS in CSV format.
+    - Cleans and processes the data to calculate total confirmed, deaths, and recovered cases.
+
+2. **Data Transformation**:
+    - Calculates daily growth rates and new confirmed cases.
+    - Aggregates the data at both global and country levels.
+
+3. **Data Loading**:
+    - Writes the processed data back to GCS.
+    - Loads the final datasets into BigQuery for further analysis and visualization.
+
+4. **Airflow Scheduling**:
+    - Airflow triggers the job daily at 5:30 AM IST, following the UTC 12:00 AM schedule.
+
+## How to Run
+
+1. **Set up the Environment**:
+    - Ensure Google Cloud SDK is installed.
+    - Set up a Dataproc cluster and configure Google Cloud Storage.
+
+2. **Run the ETL Job**:
+    - The ETL job is scheduled automatically using Airflow. The PySpark script is stored in GCS and executed on Dataproc.
+
+3. **Data Visualization**:
+    - Use GCP Looker Studio to create a dashboard that visualizes the latest COVID-19 data from BigQuery.
+
+## Code Summary
+
+- The ETL job processes data daily, filtering rows, calculating growth rates, and saving results to both GCS and BigQuery.
+- The job produces multiple outputs:
+    - **Total active cases with growth rates**.
+    - **Daily new confirmed cases**.
+    - **Country-level aggregated data**.
+
+## Output
+
+- **BigQuery Tables**:
+    - `covid_19_dataset.total_active_cases_with_growth_rates`
+    - `covid_19_dataset.daily_new_confirmed_cases`
+    - `covid_19_dataset.country_level_data`
+
+- **Data Visualization**:
+    - The data is visualized using GCP Looker Studio, updated daily with the latest available data.
