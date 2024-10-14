@@ -2,6 +2,13 @@
 
 This project demonstrates how to migrate data from a MySQL table to a Hive table using PySpark. The script extracts data from MySQL, loads it into Hive, and compares record counts to ensure data integrity.
 
+## Architecture
+
+The pipeline follows this architecture:
+![image](https://github.com/user-attachments/assets/8bb58542-26a0-46cd-80e6-c64ef71c6629)
+
+
+
 ## Requirements
 
 - PySpark
