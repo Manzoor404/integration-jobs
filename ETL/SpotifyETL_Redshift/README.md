@@ -1,6 +1,12 @@
-# Spotify ETL to S3 and Redshift
+# Spotify ETL WebAPI to Redshift
 
 This project extracts top tracks and search results for AR Rahman from the Spotify API using Spotipy, processes the data using PySpark, and then stores the results in Amazon S3 and Amazon Redshift.
+
+## Architecture
+
+The pipeline follows this architecture:
+![image](https://github.com/user-attachments/assets/f85b3ea6-ab33-45f1-bae0-efdb544e9312)
+
 
 ## Requirements
 
