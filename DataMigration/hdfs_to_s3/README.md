@@ -3,6 +3,7 @@
 This project demonstrates migrating data from Hadoop HDFS to Amazon S3 using PySpark. The data is read from HDFS, processed, and stored in an S3 bucket. A comparison is done to ensure data integrity between HDFS and S3.
 
 ## Architecture Diagram
+![image](https://github.com/user-attachments/assets/12e328f7-6303-4716-926c-a50949d7427e)
 
 
 ## Requirements
