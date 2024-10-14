@@ -2,6 +2,13 @@
 
 This project demonstrates how to use the Spotify API to fetch artist information and track data, and then store the results in Google Cloud Storage (GCS) and Google BigQuery using PySpark.
 
+
+## Architecture
+
+The pipeline follows this architecture:
+![image](https://github.com/user-attachments/assets/abfcd822-db26-4639-97c6-39528923eeb8)
+
+
 ## Requirements
 
 - PySpark
