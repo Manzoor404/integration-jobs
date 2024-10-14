@@ -2,6 +2,14 @@
 
 This project demonstrates how to migrate data from a MySQL database to Google BigQuery using PySpark. The data is first extracted from MySQL, transformed, and stored in Google Cloud Storage (GCS), before being loaded into BigQuery. A check is performed to ensure data integrity by comparing record counts between MySQL and BigQuery.
 
+
+## Architecture
+
+The pipeline follows this architecture:
+
+![image](https://github.com/user-attachments/assets/1c6f4706-8022-4d11-a191-450a24cc236f)
+
+
 ## Requirements
 
 - PySpark
