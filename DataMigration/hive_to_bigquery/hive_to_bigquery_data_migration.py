@@ -17,12 +17,12 @@ spark = SparkSession.builder \
     .enableHiveSupport() \
     .getOrCreate()
 
-# Step 1: Read data from Hive table using Spark
+# Read data from Hive table using Spark
 covid19_df = spark.read.table("datamigration.covid_19_data")
 total_records_hive = covid19_df.count()
 print(f"Total records in Hive: {total_records_hive}")
 
-# Step 2: Save DataFrame to GCS in CSV format
+# Save DataFrame to GCS in CSV format
 covid19_df.write \
     .format("csv") \
     .option("header", "true") \
@@ -31,7 +31,7 @@ covid19_df.write \
 
 print("Data stored in GCS")
 
-# Step 3: Load data from GCS into BigQuery
+# Load data from GCS into BigQuery
 bigquery_table = "zomatoeda-435904.covid_19_dataset.covid_data"
 
 covid19_df.write \
@@ -44,7 +44,7 @@ covid19_df.write \
 
 print("Data written to BigQuery successfully!")
 
-# Step 4: Read data back from BigQuery to check the record count
+# Read data back from BigQuery to check the record count
 bigquery_df = spark.read \
     .format("bigquery") \
     .option("table", bigquery_table) \
