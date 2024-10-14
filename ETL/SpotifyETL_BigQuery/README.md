@@ -6,7 +6,8 @@ This project demonstrates how to use the Spotify API to fetch artist information
 ## Architecture
 
 The pipeline follows this architecture:
-![image](https://github.com/user-attachments/assets/abfcd822-db26-4639-97c6-39528923eeb8)
+![image](https://github.com/user-attachments/assets/fa0cede6-5fe3-4450-a88c-0c78bb023749)
+
 
 
 ## Requirements
