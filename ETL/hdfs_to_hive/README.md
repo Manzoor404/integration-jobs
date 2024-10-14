@@ -2,6 +2,12 @@
 
 This project demonstrates an ETL pipeline that reads raw data from HDFS, processes it by selecting and transforming specific columns, maps cities to their respective states, and writes the transformed data back to both HDFS and Hive.
 
+## Architecture
+
+The pipeline follows this architecture:
+![image](https://github.com/user-attachments/assets/b258bb33-f1d5-4368-bec1-0926580ec88d)
+
+
 ## Steps in the ETL Process
 
 1. **Read Raw Data from HDFS**:
