@@ -2,6 +2,12 @@
 
 This project demonstrates an ETL process where data is extracted from a MySQL database, processed using PySpark, and then loaded into Amazon Redshift. The script filters COVID-19 data for India and calculates global totals, saving the results to Amazon S3 before loading them into Redshift.
 
+## Architecture
+
+The pipeline follows this architecture:
+![image](https://github.com/user-attachments/assets/99139cfa-392b-4fda-8bd2-747fe042228a)
+
+
 ## Requirements
 
 - PySpark
