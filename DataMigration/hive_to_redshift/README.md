@@ -2,6 +2,13 @@
 
 This project demonstrates migrating data from a Hive table to Amazon Redshift using PySpark. The script reads records from Hive and Redshift, compares the record counts, and verifies the success of the migration.
 
+## Architecture
+
+The pipeline follows this architecture:
+
+![image](https://github.com/user-attachments/assets/f196c009-9c7c-49e6-b9af-2defdc7ad902)
+
+
 ## Requirements
 
 - PySpark
