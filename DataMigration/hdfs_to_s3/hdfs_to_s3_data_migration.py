@@ -9,7 +9,7 @@ spark = SparkSession.builder \
 
 print("Spark session initialized successfully.")
 
-# HDFS paths
+# HDFS and S3 paths
 hdfs_path = "hdfs://localhost:9000/raw_data/zomato/Zomato_restaurants_in_india.csv"
 s3_path = "s3a://syedmanzoor/raw_data/zomato/"
 
