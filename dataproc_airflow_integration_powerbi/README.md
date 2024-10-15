@@ -23,6 +23,12 @@ Here is a screenshot showing the daily successful run of the Airflow job:
 ![image](https://github.com/user-attachments/assets/c3124de7-4576-42cb-b287-7797060c4e13)
 
 
+## Google Looker Studio Dashboard
+
+This dashboard from GCP Looker Studio visualizes the COVID-19 data, showing trends for total confirmed cases, total deaths, and total recovered cases:
+![image](https://github.com/user-attachments/assets/62c521a5-6201-494e-9e81-83f390cb1547)
+
+
 ## Steps Involved
 
 1. **Data Extraction**:
