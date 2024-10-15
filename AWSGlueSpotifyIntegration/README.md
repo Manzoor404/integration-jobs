@@ -2,6 +2,12 @@
 
 In this project, we extract data from Spotify, transform it, and load it into Amazon Redshift. The ETL process is run in AWS Glue, and the job is scheduled to run daily. The ETL job also writes data to an S3 bucket as an intermediate step.
 
+## Architecture
+
+The pipeline follows this architecture:
+![image](https://github.com/user-attachments/assets/7a98cefd-ffa8-451d-98f0-a77f10fadd09)
+
+
 ## Requirements
 
 - **Libraries Used:**
