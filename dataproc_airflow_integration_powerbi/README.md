@@ -16,6 +16,13 @@ The pipeline follows this architecture:
 5. **BigQuery**: Data is stored in BigQuery for querying and analysis.
 6. **Looker Studio**: Visualizes the processed data through interactive dashboards.
 
+
+## Airflow Daily Job Run
+
+Here is a screenshot showing the daily successful run of the Airflow job:
+![image](https://github.com/user-attachments/assets/c3124de7-4576-42cb-b287-7797060c4e13)
+
+
 ## Steps Involved
 
 1. **Data Extraction**:
