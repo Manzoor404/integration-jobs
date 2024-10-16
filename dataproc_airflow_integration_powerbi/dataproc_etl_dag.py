@@ -7,7 +7,7 @@ from datetime import timedelta
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': days_ago(1),  # Set the start date to 1 day ago (adjust if necessary)
+    'start_date': days_ago(1),  # Set the start date to 1 day ago
     'email': ['symah1097@gmail.com'],  # Your email to receive notifications
     'email_on_failure': True,  # Enable email notifications on failure
     'email_on_retry': True,  # Enable email notifications on retry
@@ -20,8 +20,8 @@ with DAG(
     'dataproc_etl_dag',
     default_args=default_args,
     description='A DAG to run PySpark job on Dataproc',
-    schedule_interval=timedelta(days=1),  # Set schedule to run daily (adjust as necessary)
-    catchup=False,  # Only run DAG once on each schedule interval
+    schedule_interval=timedelta(days=1),  # Schedule to run daily
+    catchup=False,  # Run DAG once on each schedule interval
 ) as dag:
 
     # Define the GCS Path where the PySpark script is located
@@ -32,7 +32,7 @@ with DAG(
         "reference": {"project_id": "zomatoeda-435904"},
         "placement": {"cluster_name": "syedmanzoor-cluster"},
         "pyspark_job": {
-            "main_python_file_uri": gcs_script_path,  # GCS Path to your PySpark script
+            "main_python_file_uri": gcs_script_path,  # GCS Path of PySpark script
             "args": [
                 "gs://syedmanzoor-bucket/covid19/covid_data/",  # Input data
                 "gs://syedmanzoor-bucket/transformed_data/"  # Output data
