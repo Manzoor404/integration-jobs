@@ -20,7 +20,8 @@ The pipeline follows this architecture:
 ## Airflow Daily Job Run
 
 Here is a screenshot showing the daily successful run of the Airflow job:
-![image](https://github.com/user-attachments/assets/187e69c1-abc5-4aa3-aa51-007000377a58)
+![image](https://github.com/user-attachments/assets/d85afc31-392f-44a3-b860-c61a298e58e0)
+
 
 
 
