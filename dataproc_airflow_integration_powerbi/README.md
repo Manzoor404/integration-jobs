@@ -20,7 +20,8 @@ The pipeline follows this architecture:
 ## Airflow Daily Job Run
 
 Here is a screenshot showing the daily successful run of the Airflow job:
-![image](https://github.com/user-attachments/assets/c3124de7-4576-42cb-b287-7797060c4e13)
+![image](https://github.com/user-attachments/assets/c1161fb5-7de7-45d0-9284-7fcef0c643a8)
+
 
 
 ## Google Looker Studio Dashboard
